@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * _realloc - reallocate dynamic memory
@@ -32,7 +33,7 @@ void *_realloc(void *old_mem_blk, size_t old_size, size_t new_size)
 	{
 		min_size = (old_size < new_size) ? old_size : new_size;
 
-		_memcpy(new_mem_blk, old_mem_blk, min_size);
+		memcpy(new_mem_blk, old_mem_blk, min_size);
 
 		free(old_mem_blk);
 	}
