@@ -1,37 +1,27 @@
 #include "main.h"
-/**
- * print_rot13 - convert to rot13
- * @args: printf arguments
- * Return: counter
- *
- */
-int print_rot13(va_list args)
-{
-	int i, j, counter = 0;
-	int k = 0;
-	char *s = va_arg(args, char*);
-	char al[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-	char bl[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
-	if (s == NULL)
-		s = "(null)";
-	for (i = 0; s[i]; i++)
+/**
+ * rot13 - encodes a string using rot13
+ * @s: string to encode
+ * Return: pointer to encoded string
+ */
+char *rot13(char *s)
+{
+	int i, j;
+	char *map1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *map2 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		k = 0;
-		for (j = 0; al[j] && !k; j++)
+		for (j = 0; map1[j] != '\0'; j++)
 		{
-			if (s[i] == al[j])
+			if (s[i] == map1[j])
 			{
-				_putchar(bl[j]);
-				counter++;
-				k = 1;
+				s[i] = map2[j];
+				break;
 			}
 		}
-		if (!k)
-		{
-			_putchar(s[i]);
-			counter++;
-		}
 	}
-	return (counter);
+
+	return (s);
 }
