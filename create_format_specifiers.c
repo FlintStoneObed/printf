@@ -7,7 +7,7 @@
  * Return: an array of format specifiers
  */
 
-format_specifier *create_format_specifiers(void)
+format_specifiers *create_format_specifiers(void)
 {
 	static format_specifier specifiers[] = {
 		{'d', 0, 0, 0, 0, 0, 0, 0, 0, handle_decimal},
@@ -30,8 +30,8 @@ format_specifier *create_format_specifiers(void)
 	size_t num_specifiers = sizeof(specifiers) / sizeof(specifiers[0]);
 
 	/* allocate memory for the format_specifiers array and copy the content */
-	format_specifier *format_specifiers = malloc(
-			num_specifiers * sizeof(format_specifier));
+	format_specifiers *format_specifiers = malloc(
+			num_specifiers * sizeof(format_specifiers));
 
 	/* verify memory allocation was successful before continuing */
 	if (format_specifiers == NULL)
@@ -40,7 +40,7 @@ format_specifier *create_format_specifiers(void)
 	}
 
 	_memcpy(
-			format_specifiers, specifiers, num_specifiers * sizeof(format_specifier));
+			format_specifiers, specifiers, num_specifiers * sizeof(format_specifiers));
 
 	return (format_specifiers);
 }
