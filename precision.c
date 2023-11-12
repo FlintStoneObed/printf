@@ -4,7 +4,7 @@
  *  * get_precision - This calculates the precision for printing.
  *   * @format: The formatted str in which to print the arg.
  *    * @i: A list of arg to be printed
- *     * @list: list of arg
+ *     * @list: a list of arg
  *      *
  *       * Return: Precision.
  */
