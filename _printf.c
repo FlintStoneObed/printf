@@ -3,10 +3,10 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- *  * _printf - Printf function.
- *   * @format: format
- *    * Return: Printed characters
- *     */
+ * _printf - Printf function.
+ * @format: format
+ * Return: Printed characters
+ */
 
 int _printf(const char *format, ...)
 {
@@ -56,10 +56,10 @@ int _printf(const char *format, ...)
 }
 
 /**
- *  * print_buffer -This prints the contents of the buffer if it exists.
- *   * @buffer: An array of characters.
- *    * @buff_ind: Index at which to add next character, represents the length
- *     */
+ * print_buffer -This prints the contents of the buffer if it exists.
+ * @buffer: An array of characters.
+ * @buff_ind: Index at which to add next character, represents the length
+ */
 
 void print_buffer(char buffer[], int *buff_ind)
 {
