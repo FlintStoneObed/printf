@@ -52,5 +52,5 @@ void _itob(ssize_t number, char *buffer, int base)
 	}
 
 	buffer[len] = '\0';
-	_reverse_str(buffer, len);
+	reverse_str(buffer, len);
 }
