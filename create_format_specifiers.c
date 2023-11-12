@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * create_format_specifiers - creates an array of structs to hold
@@ -23,7 +24,7 @@ format_specifiers *create_format_specifiers(void)
 		{'b', 0, 0, 0, 0, 0, 0, 0, 0, handle_binary},
 		{'o', 0, 0, 0, 0, 0, 0, 0, 0, handle_octal},
 		{'u', 0, 0, 0, 0, 0, 0, 0, 0, handle_unsigned_int},
-		{'p', 0, 0, 0, 0, 0, 0, 0, 0, handle_pointer},
+		{'p', 0, 0, 0, 0, 0, 0, 0, 0, handle_print},
 	};
 
 	/* calculate the number of specifiers in the array */
@@ -39,7 +40,7 @@ format_specifiers *create_format_specifiers(void)
 		return (NULL);
 	}
 
-	_memcpy(
+	memcpy(
 			format_specifiers, specifiers, num_specifiers * sizeof(format_specifiers));
 
 	return (format_specifiers);
