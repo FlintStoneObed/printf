@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_print - This prints an arg based on its type.
+ * handle_print - This will print an arg based on its type.
  * @fmt: The formatted str in which to print the arg
  * @list: The list of arg to print
  * @ind: ind.
