@@ -2,7 +2,7 @@
 
 /******** WRITE HANDLE ********/
 /**
- * handle_write_char - This prints a str.
+ * handle_write_char - This will print a str.
  * @c: character types.
  * @buffer: The buffer array to handle prints.
  * @flags:  This calculates active flags
