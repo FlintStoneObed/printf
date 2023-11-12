@@ -7,6 +7,7 @@
  * @args: arguments list
  * Return: a pointer to the updated format
  */
+
 const char *parse_modifiers(const char *format, format_specifier *spec,
 							va_list args)
 {
@@ -77,7 +78,7 @@ int get_width_precision(const char *format, va_list args)
 {
 	if (isdigit(*(format)))
 	{
-		return (_atoi(format));
+		return (atoi(format));
 	}
 	else if (*format == '*')
 		return (va_arg(args, int));
