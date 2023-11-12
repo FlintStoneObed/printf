@@ -1,4 +1,5 @@
 #include "main.h"
+##include "string_buffer.h"
 
 /**
  * handle_char - appends a character to the string buffer
