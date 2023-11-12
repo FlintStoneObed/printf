@@ -1,4 +1,4 @@
-#The printf collaborative task
+#The printf collaborative task.
 
 0x11. C - printf
 
