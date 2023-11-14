@@ -158,8 +158,6 @@ int write_unsgnd(int is_negative, int ind,
 		int flags, int width, int precision, int size)
 {
 
-	/* The number is stored at the bufer's right and starts at position i */
-
 	int length = BUFF_SIZE - ind - 1, i = 0;
 	char padd = ' ';
 
@@ -177,17 +175,13 @@ int write_unsgnd(int is_negative, int ind,
 		buffer[--ind] = '0';
 		length++;
 	}
-
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
-
 	if (width > length)
 	{
 		for (i = 0; i < width - length; i++)
 			buffer[i] = padd;
-
 		buffer[i] = '\0';
-
 		if (flags & F_MINUS) /* Asign extra char to left of buffer [buffer>padd]*/
 		{
 			return (write(1, &buffer[ind], length) + write(1, &buffer[0], i));
@@ -197,7 +191,7 @@ int write_unsgnd(int is_negative, int ind,
 		return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 		}
 	}
-	return write(1, &buffer[ind], length);
+	return (write(1, &buffer[ind], length));
 }
 
 /**
